@@ -19,10 +19,10 @@ This program is created for an ATM of a given bank.  The bank has many users whi
 
 ## File Structures: 
 The files used in this program are:
-•	Main.py: a python file which stores all the classes, attributes, and functions 
-•	Bank.txt: a text file that stores the ATM ID and ATM location of an ATM whose money amount is less than 10% of the maximum amount. 
-•	Users.txt: a text file that stores all the relevant information about each user created or updated
-•	Account.txt: a text file that stores all the relevant information about each account opened or created 
+*	Main.py: a python file which stores all the classes, attributes, and functions 
+*	Bank.txt: a text file that stores the ATM ID and ATM location of an ATM whose money amount is less than 10% of the maximum amount. 
+*	Users.txt: a text file that stores all the relevant information about each user created or updated
+*	Account.txt: a text file that stores all the relevant information about each account opened or created 
 
 
 ## User process 
