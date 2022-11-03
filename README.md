@@ -3,10 +3,19 @@
 ## Description
 United Bank is looking at computerizing its banking system. The users of the system will interact with it like customers using an ATM. A part of their software requirement is given below. You are required to do additional self-study on how ATM machines function and create a design for managing the same.
 
-## Requirements  
-*	A list of all classes (related attributes and behaviors), relationships between classes, and assumptions made.
-*	UML class diagram with all class relationships included.
-*	Python code that represents classes, which includes the constructor, setter/getter, and other functions for the given requirements.
+# Problem Analysis
+## List of Classes, Attributes, And Behaviors
+
+| Class names   |Attributes |  Behaviors |
+|---------------|------------|------------|
+| User |  User_id: (str)<br> User_name: (str) <br> User_address: (str) <br> Phone_num: (str) <br> Second_user_name: (str) <br> Accounts = [Account] | Set_user_id (str): <br> Set_user_name (str): <br> Set_user_adress (str): <br> Set_phone_num (str):<br>Set_account (Account ()):<br>Set_second_user_name (str):<br>Get_user_id (): str<br>Get_user_name ():str<br>Get_second_name ():str<br>Get_user_adress ():str<br>Get_phone_num ():str<br>Get_account (): list<br>Submit():|
+| Account |  Account_type (‘Checking’, ‘Saving’, ‘Busines’)<br> Type: (int)<br>Pin_key: (Str)<br>Interest: (int)<br>Max_withdraw: (int)<br>Min_balance : (int)<br>Opening_year: (datetime)<br>Amount_total: (int) | Set_pin_key (str):<br>Set_amount(int):<br>Set_account_type (int):<br>Set_opening_year(datetime):<br>Get_pin_key ():str<br>Get_amount (): int<br>Get_account_type (): <br>Account_type[Type]<br>Get_opening_year (): datetime<br>withdraw ():<br>deposit ():<br>Submit ():|
+| ATM |  Atm_id: (str)<br>Bank: (Bank ())<br>Amount_money: (int)<br>Max_amount: (int)<br>Atm_address: (str)<br>Types_currency (AED, USD)<br>type_currency: (int)<br>Pin: (str)<br>Account: (Account ())| Set_atm_id(str): <br>Set_amount_money(int): <br>Set_atm_address(str):<br> Set_types_currency(int): <br> Set_max_amount(int): <br>Set_bank(Bank()):<br>Get_atm_id (): str<br>Get_bank (): str<br>Get_amount_money (): int<br>Get_max_amount(): int<br>Get_atm_address (): str<br>Get_types_currency(): <br> Types_currency[types_currency]<br>Remove_card():<br>Authenticate (Pin):<br>Withdraw ():<br>Deposit ():<br>transfer ():|
+| Bank |  Bank_name: (str)<br>Bank_address: (str)<br>Account: (Account ())<br>Users = {User_name (), Accounts}<br>+ATM: (ATM())| Set_bank_name (str):<br> Set_bank_adress (str):<br> Set_users (User):<br> Set_atm (ATM):<br> Get_atm(): str<br> Get_bank_name ():str<br> Get_bank_adress ():str<br> Get_users (): dict <br> Create_new_account (Account ()):|
+
+
+## Understanding the problem
+This program is created for an ATM of a given bank.  The bank has many users which has many accounts. A user can create an account in the bank and specify the account type and pin number for that account. For every account there is a specific pin number set by the user and different minimum and maximum amounts and doing any transaction is limited by those numbers. The ATM allows the user to deposit, withdraw and transfer money after validating his/her pin number. After a user creates an account, all the relevant information is stored in a file. And after a user is registered in the bank, all relevant information is stored in another file. Also, the bank has information about each user and his/her active accounts. 
 
 ## File Structures: 
 The files used in this program are:
@@ -21,6 +30,7 @@ The user approaches the ATM and inserts his card.. The ATM checks if the account
 (I considered the user as ‘he’)
 
 ## Flow Chart
+<img width="538" alt="image" src="https://user-images.githubusercontent.com/59441158/199777215-514e6830-3f76-46d5-b8cb-22e1d491309c.png" style="display: block; margin-left: auto; margin-right: auto;" >
 
 
 ## Class Design 
@@ -31,7 +41,7 @@ The user approaches the ATM and inserts his card.. The ATM checks if the account
 * Bank – Account (Association): A Bank can create many accounts based on the preferences of the user. For every Bank there are many accounts.
 * ATM – Account (Association): An ATM takes an action on the accounts. It can withdraw, deposit or transfer money. I used association to show this relationship. Many ATMs can take an action on many Accounts.
 
-
+<img width="497" alt="image" src="https://user-images.githubusercontent.com/59441158/199777290-c7e17fe9-ed67-4ecf-b952-782ea119c2c6.png" style="display: block; margin-left: auto; margin-right: auto;" >
 
 ## Conclusion 
 I have learned how to implement real-life problems into python codes in this exercise. I enjoyed designing UML and writing the codes as I was eager to program the functionalities of an ATM machine. However, I did not remember about the flow chart much, so I was forced to revise introduction to python, and it took me a bit of time to do it. On the other hand, saving all the relative information and accessing it to validate was a bit challenging as we did not work to this much of codes, but at the same time it let me to learn more about how to update, manipulate and edit text files. I would love working this project in GUI, but since there was not enough time, I was limited to the requirements given. From my perspective, I would suggest if the system would limit a user from not exceeding a specific number of accounts, because the system I have built added as many as accounts the user wants to add as long as he/she provides their User ID. In addition, functionalities like language could be added to the system to make it more user friendly. 
